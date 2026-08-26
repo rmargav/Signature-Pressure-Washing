@@ -215,12 +215,11 @@
                                 <li>
                                     <a href="about.html">About</a>
                                 </li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle active" data-toggle="dropdown">Services</a>
-                                    <ul class="dropdown-menu" style="display: none; opacity: 1;">
-                                        <li><a href="commercial.html">Commercial</a></li>
-                                        <li><a href="residential.html">Residential</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="commercial.html" class="active">Commercial Service</a>
+                                </li>
+                                <li>
+                                    <a href="residential.html">Residential Service</a>
                                 </li>
                                 <li>
                                     <a href="contact.html">contact</a>
@@ -230,16 +229,14 @@
                     </div>
                     <!-- /.navbar-collapse -->
                     <!-- Start Atribute Navigation -->
-                    <div class="col-lg-3">
-                        <div class="attr-nav">
-                            <div class="call">
-                                <div class="icon">
-                                    <img src="assets/img/myimg/home/call.png" alt="Phone">
-                                </div>
-                                <div class="info">
-                                    <span>Have any question?</span>
-                                    <h5>613 619 0916</h5>
-                                </div>
+                    <div class="col-lg-3 d-none d-lg-block">
+                        <div class="attr-nav contact-actions" style="margin-top: 20px; padding-right: 15px;">
+                            <div class="action-buttons mb-2 d-flex justify-content-end">
+                                <a href="tel:6136190916" class="btn btn-theme effect btn-sm" style="margin-right: 5px; padding: 10px 20px;"><i class="fa fa-phone" style="margin-right: 5px;"></i> Call</a>
+                                <a href="sms:6136190916" class="btn btn-theme effect btn-sm" style="padding: 10px 20px;"><i class="fa fa-comment" style="margin-right: 5px;"></i> Text</a>
+                            </div>
+                            <div class="action-quote d-flex justify-content-end">
+                                <a href="contact.html" class="btn btn-theme primary effect btn-sm" style="width: 100%; text-align: center;">Get Quote</a>
                             </div>
                         </div>
                     </div>
@@ -965,6 +962,12 @@
             });
         });
     </script>
+    <!-- Mobile Bottom Bar -->
+    <div id="mobile-bottom-bar" class="d-lg-none" style="position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 99999;">
+        <a href="tel:6136190916" class="btn btn-theme effect" style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-phone" style="margin-right: 5px;"></i> Call Us</a>
+        <a href="sms:6136190916" class="btn btn-theme primary effect" style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-comment" style="margin-right: 5px;"></i> Text Us</a>
+    </div>
+
 </body>
 
 </html>
