@@ -30,6 +30,43 @@
     <!-- ========== End Stylesheet ========== -->
 
     <style>
+        /* 1. Navbar Logo Background Fix (Updated for Mobile Compatibility) */
+        .navbar-header {
+            background-color: #ffffff;
+            /* Keeps the white background for all devices */
+        }
+
+        /* Restrict the height and flex layout to desktop only (screens 992px and larger) */
+        @media (min-width: 992px) {
+            .navbar-header {
+                min-height: 100px;
+                /* Matches the initial load height on desktop */
+                display: flex;
+                align-items: center;
+                padding-left: 15px;
+                /* Ensures logo isn't touching the edge */
+            }
+        }
+
+        /* 2. Button Vertical Alignment Fix */
+        .contact-actions-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100px;
+            /* Locks the vertical space to prevent shifting */
+        }
+
+        /* 3. New Get Quote Button Color */
+        .contact-quote-btn {
+            background-color: #9ca728 !important;
+            /* Replace with your new color */
+            border-color: #9ca728 !important;
+            color: #ffffff !important;
+            box-sizing: border-box;
+            /* Ensures padding doesn't widen the button */
+        }
+
         ulm {
             line-height: 1.5em;
             margin: 5px 0 15px;
@@ -232,11 +269,16 @@
                     <div class="col-lg-3 d-none d-lg-block">
                         <div class="attr-nav contact-actions-wrapper">
                             <div class="action-buttons mb-2 d-flex justify-content-between" style="width: 100%;">
-                                <a href="tel:6136190916" class="btn btn-theme effect btn-sm" style="flex: 1; margin-right: 5px; padding: 10px 0; text-align: center;"><i class="fa fa-phone" style="margin-right: 5px;"></i> Call</a>
-                                <a href="sms:6136190916" class="btn btn-theme effect btn-sm" style="flex: 1; margin-left: 5px; padding: 10px 0; text-align: center;"><i class="fa fa-comment" style="margin-right: 5px;"></i> Text</a>
+                                <a href="tel:6136190916" class="btn btn-theme effect btn-sm"
+                                    style="flex: 1; margin-right: 5px; padding: 10px 0; text-align: center;"><i
+                                        class="fa fa-phone" style="margin-right: 5px;"></i> Call</a>
+                                <a href="sms:6136190916" class="btn btn-theme effect btn-sm"
+                                    style="flex: 1; margin-left: 5px; padding: 10px 0; text-align: center;"><i
+                                        class="fa fa-comment" style="margin-right: 5px;"></i> Text</a>
                             </div>
                             <div class="action-quote" style="width: 100%;">
-                                <a href="contact.html" class="btn btn-theme effect btn-sm contact-quote-btn" style="width: 100%; text-align: center;">Get Quote</a>
+                                <a href="contact.html" class="btn btn-theme effect btn-sm contact-quote-btn"
+                                    style="width: 100%; text-align: center;">Get Quote</a>
                             </div>
                         </div>
                     </div>
