@@ -8777,6 +8777,26 @@ a.btn-common:hover {
 	transform: translateY(100%);
 	transition: transform 0.3s ease-in-out;
 }
+
 #mobile-bottom-bar.show-bar {
 	transform: translateY(0);
+}
+
+/* Contact Actions Desktop Fixes */
+.contact-actions-wrapper {
+	margin-top: 10px !important; /* Base position, moves buttons UP from bottom edge */
+	padding-right: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.sticked .contact-actions-wrapper {
+	margin-top: 15px !important; /* Pushes buttons slightly down when scrolled to counteract upward shift */
+}
+
+.contact-quote-btn {
+	background-color: #FF9800 !important; /* Orange */
+	border-color: #FF9800 !important;
+	color: #fff !important;
 }

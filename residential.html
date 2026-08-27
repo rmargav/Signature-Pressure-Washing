@@ -230,13 +230,13 @@
                     <!-- /.navbar-collapse -->
                     <!-- Start Atribute Navigation -->
                     <div class="col-lg-3 d-none d-lg-block">
-                        <div class="attr-nav contact-actions" style="margin-top: 20px; padding-right: 15px;">
-                            <div class="action-buttons mb-2 d-flex justify-content-end">
-                                <a href="tel:6136190916" class="btn btn-theme effect btn-sm" style="margin-right: 5px; padding: 10px 20px;"><i class="fa fa-phone" style="margin-right: 5px;"></i> Call</a>
-                                <a href="sms:6136190916" class="btn btn-theme effect btn-sm" style="padding: 10px 20px;"><i class="fa fa-comment" style="margin-right: 5px;"></i> Text</a>
+                        <div class="attr-nav contact-actions-wrapper">
+                            <div class="action-buttons mb-2 d-flex justify-content-between" style="width: 100%;">
+                                <a href="tel:6136190916" class="btn btn-theme effect btn-sm" style="flex: 1; margin-right: 5px; padding: 10px 0; text-align: center;"><i class="fa fa-phone" style="margin-right: 5px;"></i> Call</a>
+                                <a href="sms:6136190916" class="btn btn-theme effect btn-sm" style="flex: 1; margin-left: 5px; padding: 10px 0; text-align: center;"><i class="fa fa-comment" style="margin-right: 5px;"></i> Text</a>
                             </div>
-                            <div class="action-quote d-flex justify-content-end">
-                                <a href="contact.html" class="btn btn-theme primary effect btn-sm" style="width: 100%; text-align: center;">Get Quote</a>
+                            <div class="action-quote" style="width: 100%;">
+                                <a href="contact.html" class="btn btn-theme effect btn-sm contact-quote-btn" style="width: 100%; text-align: center;">Get Quote</a>
                             </div>
                         </div>
                     </div>
@@ -957,10 +957,16 @@
     </script>
 
     <!-- Mobile Bottom Bar -->
-    <div id="mobile-bottom-bar" class="d-lg-none" style="position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 99999;">
-        <a href="tel:6136190916" class="btn btn-theme effect" style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-phone" style="margin-right: 5px;"></i> Call Us</a>
-        <a href="sms:6136190916" class="btn btn-theme primary effect" style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-comment" style="margin-right: 5px;"></i> Text Us</a>
+    <div id="mobile-bottom-bar" class="d-lg-none"
+        style="position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 99999;">
+        <a href="tel:6136190916" class="btn btn-theme effect"
+            style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-phone"
+                style="margin-right: 5px;"></i> Call Us</a>
+        <a href="sms:6136190916" class="btn btn-theme primary effect"
+            style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-comment"
+                style="margin-right: 5px;"></i> Text Us</a>
     </div>
 
 </body>
+
 </html>

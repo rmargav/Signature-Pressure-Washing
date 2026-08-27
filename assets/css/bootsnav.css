@@ -3535,10 +3535,14 @@ nav.bootsnav.navbar-sidebar ul.nav>li>a i.fas.fa-file-alt {
 		padding-right: 30px;
 	}
 
+	.navbar.nav-full-width .brand-item {
+		padding-left: 0;
+	}
+
 	.navbar.nav-full-width .navbar-header {
 		position: absolute;
 		top: -105px;
-		right: 15px;
+		left: 0;
 		text-align: center;
 		width: 100%;
 		background: var(--white);
