@@ -58,15 +58,22 @@
         }
     </style>
     <style>
-        /* 1. Navbar Logo Background Fix */
+        /* 1. Navbar Logo Background Fix (Updated for Mobile Compatibility) */
         .navbar-header {
             background-color: #ffffff;
-            min-height: 160px;
-            /* Matches the initial load height */
-            display: flex;
-            align-items: center;
-            padding-left: 15px;
-            /* Ensures logo isn't touching the edge */
+            /* Keeps the white background for all devices */
+        }
+
+        /* Restrict the height and flex layout to desktop only (screens 992px and larger) */
+        @media (min-width: 992px) {
+            .navbar-header {
+                min-height: 100px;
+                /* Matches the initial load height on desktop */
+                display: flex;
+                align-items: center;
+                padding-left: 15px;
+                /* Ensures logo isn't touching the edge */
+            }
         }
 
         /* 2. Button Vertical Alignment Fix */
