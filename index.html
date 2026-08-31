@@ -163,6 +163,277 @@
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
+
+        /* --- Slider Buttons Custom Styles --- */
+
+        /* 1. Desktop Spacing */
+        .slider-btn {
+            width: auto !important;
+            padding-left: 14px !important;
+            padding-right: 14px !important;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+
+        /* 2. Remove Theme-Injected Horizontal Lines from Icons */
+        .slider-btn i {
+            border: none !important;
+            text-decoration: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        /* 3. Mobile Full-Width Override */
+        @media (max-width: 767px) {
+            .slider-btn {
+                display: block !important;
+                width: 100% !important;
+                margin-right: 0 !important;
+                margin-bottom: 12px !important;
+                box-sizing: border-box;
+            }
+        }
+
+        /* 4. Remove Template's Decorative Horizontal Lines */
+
+        /* Hide decorative lines on icons */
+        .slider-btn i::after,
+        .about-us-area .bottom-info .btn i::after,
+        .free-quote-btn i::after {
+            display: none !important;
+            content: none !important;
+            background: transparent !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+
+        /* Remove stray borders/decorative effects from icons */
+        .slider-btn i,
+        .about-us-area .bottom-info .btn i,
+        .free-quote-btn i {
+            border: none !important;
+            text-decoration: none !important;
+            box-shadow: none !important;
+        }
+
+        /* --- Unified Services Section Styles (UPDATED FOR ICONS) --- */
+        .modern-services-area {
+            background-color: #fdfdf5;
+            padding: 50px 0;
+        }
+
+        .modern-service-item {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            /* Subtle rounding for a modern look */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            color: #333333;
+            border: 1px solid #eeeeee;
+        }
+
+        /* Hover Effect - Changes background to Green */
+        .modern-service-item:hover {
+            background: #9ca728;
+            color: #ffffff;
+            border-color: #9ca728;
+        }
+
+        .modern-service-item:hover h4,
+        .modern-service-item:hover p {
+            color: #ffffff !important;
+        }
+
+        .ms-content-wrapper {
+            flex: 1;
+            padding-right: 25px;
+        }
+
+        .ms-top-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .ms-title {
+            flex: 0 0 35%;
+            font-weight: 700;
+            margin: 0;
+            padding-right: 15px;
+            font-size: 22px;
+        }
+
+        .ms-desc {
+            flex: 1;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Icon Badges Setup */
+        .ms-icons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Service Icon Badges */
+        .ms-icon-badge {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #555555;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+
+        .ms-icon-badge img {
+            width: 18px;
+            height: 18px;
+            margin-right: 6px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+
+            /* Black icons initially */
+            filter: brightness(0);
+        }
+
+        /* Hover: Make badge text and icon white */
+        .modern-service-item:hover .ms-icon-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .modern-service-item:hover .ms-icon-badge img {
+            /* White icons on hover */
+            filter: brightness(0) invert(1);
+        }
+
+
+        /* Light blue arrow box */
+        .ms-arrow {
+            flex: 0 0 60px;
+            height: 60px;
+            background: #8ee4f0;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 991px) {
+            .modern-service-item {
+                flex-direction: column;
+                text-align: left;
+                padding: 20px;
+            }
+
+            .ms-content-wrapper {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .ms-top-row {
+                flex-direction: column;
+            }
+
+            .ms-title {
+                margin-bottom: 10px;
+            }
+
+            .ms-arrow {
+                width: 100%;
+            }
+        }
+
+        /* --- Service Locations Area Styles --- */
+        .service-locations-wrapper {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 45px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f8f9fa;
+            margin-top: 20px;
+        }
+
+        .location-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px 20px;
+        }
+
+        .location-list li {
+            position: relative;
+            padding-left: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #444444;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            cursor: default;
+        }
+
+        .location-list li i {
+            position: absolute;
+            left: 0;
+            color: #2297DC;
+            /* Your brand blue */
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effect: Text turns green and slides right slightly */
+        .location-list li:hover {
+            color: #9ca728;
+            /* Your brand green */
+            transform: translateX(5px);
+        }
+
+        .location-list li:hover i {
+            color: #9ca728;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .location-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .location-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-locations-wrapper {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .location-list {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <!-- ========== End Stylesheet ========== -->
 
@@ -315,6 +586,8 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
+
+                <!-- Slide 1 -->
                 <div class="carousel-item bg-cover active"
                     style="background-image: url(assets/img/myimg/home/sl1.jpg);">
                     <div class="box-table">
@@ -323,14 +596,30 @@
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="content">
-                                            <h4 data-animation="animated slideInRight">Ottawa’s Trusted Experts in
-                                                Pressure Washing Cleaning!</h4>
-                                            <h2 data-animation="animated slideInRight">Stellar Cleaning Services</h2>
+                                            <h4 data-animation="animated slideInRight">Ottawa’s Premier Exterior
+                                                Cleaning Specialists</h4>
+                                            <h2 data-animation="animated slideInRight">Restore Your Property's Pristine
+                                                Shine</h2>
 
-                                            <!--<p data-animation="animated slideInLeft">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga eos, doloremque reiciendis sequi tempora odio nam
-                                            </p>-->
-                                            <!--<a data-animation="animated zoomInUp" class="btn btn-theme effect btn-md" href="#">Book a Schedule</a>-->
+                                            <p data-animation="animated slideInLeft">
+                                                Experience unmatched quality and professional pressure washing services
+                                                designed to protect and revitalize your residential or commercial
+                                                property.
+                                            </p>
+
+                                            <div data-animation="animated zoomInUp" style="margin-top: 25px;">
+                                                <a href="tel:6136190916" class="btn btn-theme effect btn-md slider-btn">
+                                                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> (613)
+                                                    619-0916
+                                                </a>
+                                                <a href="sms:6136190916" class="btn btn-theme effect btn-md slider-btn">
+                                                    <i class="fas fa-sms" style="margin-right: 5px;"></i> Text Us
+                                                </a>
+                                                <a href="contact.html"
+                                                    class="btn btn-theme primary effect btn-md contact-quote-btn slider-btn">
+                                                    Get a Free Quote
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -342,6 +631,8 @@
                         <!-- Shape -->
                     </div>
                 </div>
+
+                <!-- Slide 2 -->
                 <div class="carousel-item bg-cover" style="background-image: url(assets/img/myimg/home/sl2.jpg);">
                     <div class="box-table">
                         <div class="box-cell">
@@ -349,12 +640,29 @@
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="content">
-                                            <h2 data-animation="animated slideInRight">Elevate Your Clean, <span>Elevate
-                                                    Your Life</span></h2>
-                                            <!--<p data-animation="animated slideInLeft">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga eos, doloremque reiciendis sequi tempora odio nam
-                                            </p>-->
-                                            <!--<a data-animation="animated zoomInUp" class="btn btn-theme effect btn-md" href="#">Book a Schedule</a>-->
+                                            <h4 data-animation="animated slideInRight">Commercial & Residential Pressure
+                                                Washing</h4>
+                                            <h2 data-animation="animated slideInRight">Protect and Enhance <span>Your
+                                                    Investment</span></h2>
+
+                                            <p data-animation="animated slideInLeft">
+                                                From driveway revitalizations to full building exterior washes, we
+                                                deliver spotless results using safe, state-of-the-art equipment.
+                                            </p>
+
+                                            <div data-animation="animated zoomInUp" style="margin-top: 25px;">
+                                                <a href="tel:6136190916" class="btn btn-theme effect btn-md slider-btn">
+                                                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> (613)
+                                                    619-0916
+                                                </a>
+                                                <a href="sms:6136190916" class="btn btn-theme effect btn-md slider-btn">
+                                                    <i class="fas fa-sms" style="margin-right: 5px;"></i> Text Us
+                                                </a>
+                                                <a href="contact.html"
+                                                    class="btn btn-theme primary effect btn-md contact-quote-btn slider-btn">
+                                                    Get a Free Quote
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -366,6 +674,7 @@
                         <!-- Shape -->
                     </div>
                 </div>
+
             </div>
             <!-- End Wrapper for slides -->
 
@@ -497,18 +806,27 @@
                     <div class="col-lg-6 info">
                         <h2>GET A QUICK QUOTE</h2>
                         <blockquote>
-                            There is no need to fill out an endless estimate form.<br>
-                            <h2>Direct Call us</h2> for an over-the-phone cost estimate
+                            Skip the endless forms and waiting times.<br>
+                            <strong>Call us directly</strong> for an immediate, over-the-phone cost estimate tailored to
+                            your property.
                         </blockquote>
-                        <div class="bottom-info">
+                        <p>
+                            At Signature Pressure Washing Inc., we understand that your time is valuable. Our dedicated
+                            team is on standby to provide transparent, accurate pricing and expert advice for all your
+                            residential and commercial cleaning projects. With our commitment to excellence and
+                            state-of-the-art equipment, we ensure a spotless finish that restores and protects your
+                            investment.
+                        </p>
+                        <div class="bottom-info" style="margin-top: 30px;">
                             <div class="button">
                                 <a data-animation="animated zoomInUp" class="btn btn-theme primary effect btn-md"
-                                    href="#">Call Now</a>
+                                    href="about.html">Find Out More About Us <i class="fas fa-chevron-right"
+                                        style="margin-left: 8px; font-size: 0.9em;"></i></a>
                             </div>
                             <div class="contact">
                                 <div class="content">
                                     <span>Get Free Estimate</span>
-                                    <h5>613 619 0916</h5>
+                                    <h5>(613) 619-0916</h5>
                                 </div>
                             </div>
                         </div>
@@ -519,190 +837,111 @@
     </div>
     <!-- End About Area -->
 
-    <!-- Start Services Types 
+    <!-- Start Unified Services Area 
     ============================================= -->
-    <div class="services-types-area shadow overflow-hidden bg-theme text-light default-padding">
+    <div class="modern-services-area">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="site-heading text-center">
-                        <h4>Services</h4>
-                        <h2>Residential Services</h2>
-                        <div class="devider"></div>
-                    </div>
+            <!-- Header Row -->
+            <div class="row align-items-center mb-5" style="margin-bottom: 40px;">
+                <div class="col-lg-8">
+                    <span
+                        style="background-color: #d1f0d1; color: #28a745; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 13px; display: inline-block; margin-bottom: 15px;">
+                        <i class="far fa-check-circle"></i> SATISFACTION GUARANTEE
+                    </span>
+                    <h2 style="font-weight: 700; font-size: 36px;">Complete <span style="color: #2297DC;">Exterior
+                            Cleaning</span> Solutions</h2>
+                </div>
+                <div class="col-lg-4 text-right" style="text-align: right;">
+                    <a href="contact.html" class="btn btn-md"
+                        style="background-color: #8ee4f0; color: #333333; font-weight: 600; border-radius: 0;">Get a
+                        Free Quote Today <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="about-items">
-                <div class="row align-center">
-                    <div class="col-lg-6">
-                        <div class="row align-center">
-                            <!-- Single Item -->
-                            <div class="single-item col-lg-4 col-md-12" style="text-align: center;">
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/pool.png">
-                                        <h4>Pool Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/house.png">
-                                        <h4>House Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/window.png">
-                                        <h4>Skylight Wash</h4>
-                                    </div>
-                                </div>
+
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Left Side: Large Feature Image -->
+                <div class="col-lg-5">
+                    <div
+                        style="height: 100%; min-height: 500px; background-image: url('assets/img/3.jpg'); background-size: cover; background-position: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px;">
+                    </div>
+                </div>
+
+                <!-- Right Side: Service Stack -->
+                <div class="col-lg-7">
+
+                    <!-- Residential Block -->
+                    <a href="residential.html" class="modern-service-item">
+                        <div class="ms-content-wrapper">
+                            <div class="ms-top-row">
+                                <h4 class="ms-title text-center mt-2">Residential Services</h4>
+                                <p class="ms-desc">We provide tailored exterior cleaning solutions for homeowners,
+                                    helping maintain curb appeal while protecting surfaces from long-term wear.</p>
                             </div>
-                            <div class="single-item col-lg-4 col-md-12" style="text-align: center;">
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/roof.png">
-                                        <h4>Roof & Gutter</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/driveway.png">
-                                        <h4>Driveway Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/post.png">
-                                        <h4>Post Construction Cleaning</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item col-lg-4 col-md-12" style="text-align: center;">
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/deck.png">
-                                        <h4>Deck Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/fence.png">
-                                        <h4>Fence Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/Solarw.png">
-                                        <h4>Solar Wash</h4>
-                                    </div>
-                                </div>
+                            <!-- Residential Icon Badges -->
+                            <div class="ms-icons-grid">
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/pool.png" alt="Pool Wash">
+                                    Pool</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/house.png"
+                                        alt="House Wash"> House</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/window.png"
+                                        alt="Skylight Wash"> Skylight</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/roof.png"
+                                        alt="Roof & Gutter"> Roof & Gutter</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/driveway.png"
+                                        alt="Driveway Wash"> Driveway</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/post.png"
+                                        alt="Post Construction"> Post-Construction</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/deck.png" alt="Deck Wash">
+                                    Deck</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/fence.png"
+                                        alt="Fence Wash"> Fence</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/Solarw.png"
+                                        alt="Solar Wash"> Solar</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="thumb">
-                            <img src="assets/img/3.jpg" alt="Thumb">
+                        <div class="ms-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </a>
+
+                    <!-- Commercial Block -->
+                    <a href="commercial.html" class="modern-service-item">
+                        <div class="ms-content-wrapper">
+                            <div class="ms-top-row">
+                                <h4 class="ms-title text-center mt-2">Commercial Services</h4>
+                                <p class="ms-desc">Our team works with businesses and property managers to deliver
+                                    reliable exterior cleaning solutions that enhance property appearance and safety
+                                    without disrupting operations.</p>
+                            </div>
+                            <!-- Commercial Icon Badges -->
+                            <div class="ms-icons-grid">
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/heavy.png"
+                                        alt="Fleet Wash"> Fleet</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/graffiti.png"
+                                        alt="Graffiti Removal"> Graffiti</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/building.png"
+                                        alt="Building Wash"> Building</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/store.png"
+                                        alt="Store Front"> Store Front</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/walkway.png"
+                                        alt="Walkway Wash"> Walkway</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/car.png" alt="Parking Lot">
+                                    Parking Lot</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/drive.png"
+                                        alt="Drive Thru"> Drive Thru</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/duster.png"
+                                        alt="Dumpster Pad"> Dumpster</span>
+                                <span class="ms-icon-badge"><img src="assets/img/serviceicon/solar.png"
+                                        alt="Solar Wash"> Solar</span>
+                            </div>
                         </div>
-                    </div>
+                        <div class="ms-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </a>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Services Types Area -->
-
-    <div class="about-us-area overflow-hidden default-padding">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="site-heading text-center">
-                        <h4>Services</h4>
-                        <h2>Commercial Services</h2>
-                        <div class="devider"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="about-items">
-                <div class="row align-center">
-                    <div class="col-lg-6">
-                        <div class="thumb">
-                            <img src="assets/img/heavy.jpg" alt="Thumb">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row align-center">
-                            <!-- Single Item -->
-                            <div class="single-item col-lg-4 col-md-12">
-                                <div class="item">
-                                    <div class="top" style="text-align: center">
-                                        <img src="assets/img/serviceicon/heavy.png">
-                                        <h4 style="text-align: center">Fleet Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top" style="text-align: center">
-                                        <img src="assets/img/serviceicon/graffiti.png">
-                                        <h4>Graffiti Removal</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top" style="text-align: center">
-                                        <img src="assets/img/serviceicon/building.png">
-                                        <h4>Building Wash</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item col-lg-4 col-md-12" style="text-align: center;">
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/store.png">
-                                        <h4>Store Front Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/walkway.png">
-                                        <h4>Walkway Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/car.png">
-                                        <h4>Parking Lot Wash</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item col-lg-4 col-md-12" style="text-align: center;">
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/drive.png">
-                                        <h4>Drive Thru Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/duster.png">
-                                        <h4>Dumpster Pad Wash</h4>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="top">
-                                        <img src="assets/img/serviceicon/solar.png">
-                                        <h4>Solar Wash</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- End Unified Services Area -->
 
     <!-- Star Get Esimate
     ============================================= -->
@@ -920,7 +1159,7 @@
             </div>
         </div>
     </div>
-    <!-- Start Process Area
+    <!-- Start Service Area
     ============================================= -->
     <div class="work-process-area text-center default-padding-bottom">
         <!-- Shape -->
@@ -928,84 +1167,75 @@
             <img src="assets/img/shape/13.png" alt="Shape">
         </div>
         <!-- End Shape -->
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="site-heading text-center">
-                        <h4>Work Area</h4>
+                        <h4 style="margin-top: 50px;">Service Area</h4>
                         <h2>Serving Ottawa and Surrounding Areas with Excellence!</h2>
                         <div class="devider"></div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <ulm class="round" style="text-align: left;">
-                        <li>Arnprior</li>
-                        <li>Ashton</li>
-                        <li>Barrhaven</li>
-                        <li>Bells Corners</li>
-                        <li>Blackburn Hamlet</li>
-                        <li>Bridlewood</li>
-                        <li>Carleton Place</li>
-                        <li>Carp</li>
-                        <li>Clarence-Rockland</li>
-                        <li>Constance Bay</li>
-                        <li>Cumberland</li>
-                    </ulm>
+                <div class="col-lg-12">
+                    <div class="service-locations-wrapper">
+                        <ul class="location-list text-left">
+                            <li><i class="fas fa-map-marker-alt"></i> Arnprior</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Ashton</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Barrhaven</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Bells Corners</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Blackburn Hamlet</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Bridlewood</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Carleton Place</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Carp</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Clarence-Rockland</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Constance Bay</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Cumberland</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Downtown Ottawa</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Dunrobin</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Embrun</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Glebe</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Gloucester</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Greely</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Kanata</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Kars</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Kemptville</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Limoges</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Manotick</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Metcalfe</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Mississippi Mills</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Navan</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Nepean</li>
+                            <li><i class="fas fa-map-marker-alt"></i> North Gower</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Orleans</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Osgoode</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Ottawa</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Ottawa Central</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Ottawa East</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Ottawa South</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Ottawa West</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Renfrew</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Riverside South</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Rockliffe Park</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Russell</li>
+                            <li><i class="fas fa-map-marker-alt"></i> South March</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Stittsville</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Westboro</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Winchester</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Vanier</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Vars</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-3">
-                    <ulm class="round" style="text-align: left;">
-                        <li>Downtown Ottawa</li>
-                        <li>Dunrobin</li>
-                        <li>Embrun</li>
-                        <li>Glebe</li>
-                        <li>Gloucester</li>
-                        <li>Greely</li>
-                        <li>Kanata</li>
-                        <li>Kars</li>
-                        <li>Kemptville</li>
-                        <li>Limoges</li>
-                        <li>Manotick</li>
-                    </ulm>
-                </div>
-                <div class="col-lg-3">
-                    <ulm class="round" style="text-align: left;">
-                        <li>Metcalfe</li>
-                        <li>Mississippi Mills</li>
-                        <li>Navan</li>
-                        <li>Nepean</li>
-                        <li>North Gower</li>
-                        <li>Orleans</li>
-                        <li>Osgoode</li>
-                        <li>Ottawa</li>
-                        <li>Ottawa Central</li>
-                        <li>Ottawa East</li>
-                        <li>Ottawa South</li>
-                    </ulm>
-                </div>
-                <div class="col-lg-3">
-                    <ulm class="round" style="text-align: left;">
-                        <li>Ottawa West</li>
-                        <li>Renfrew</li>
-                        <li>Riverside South </li>
-                        <li>Rockliffe Park</li>
-                        <li>Russell</li>
-                        <li>South March</li>
-                        <li>Stittsville</li>
-                        <li>Westboro</li>
-                        <li>Winchester</li>
-                        <li>Vanier</li>
-                        <li>Vars</li>
-                    </ulm>
-                </div>
-
             </div>
         </div>
     </div>
-    <!-- End Process Area -->
+    <!-- End Service Area -->
     <!-- Start Services
     ============================================= -->
     <!--<div class="services-style-two-area default-padding">
