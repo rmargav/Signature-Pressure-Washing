@@ -200,7 +200,10 @@
         /* Hide decorative lines on icons */
         .slider-btn i::after,
         .about-us-area .bottom-info .btn i::after,
-        .free-quote-btn i::after {
+        .free-quote-btn i::after,
+        .modern-service-area .btn i::after,
+        .contact-quote-btn i::after,
+        .quote-today-btn i::after {
             display: none !important;
             content: none !important;
             background: transparent !important;
@@ -211,7 +214,10 @@
         /* Remove stray borders/decorative effects from icons */
         .slider-btn i,
         .about-us-area .bottom-info .btn i,
-        .free-quote-btn i {
+        .free-quote-btn i,
+        .modern-service-area .btn i,
+        .contact-quote-btn i,
+        .quote-today-btn i {
             border: none !important;
             text-decoration: none !important;
             box-shadow: none !important;
@@ -361,77 +367,219 @@
             }
         }
 
-        /* --- Service Locations Area Styles --- */
-        .service-locations-wrapper {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 45px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f8f9fa;
-            margin-top: 20px;
+        /* --- Modern Service Area & Map Layout --- */
+        .modern-service-area {
+            background-color: #ffffff;
+            padding: 80px 0;
+            overflow: hidden;
         }
 
-        .location-list {
+        .map-wrapper {
+            height: 100%;
+            min-height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border: 0;
+        }
+
+        .service-list-content {
+            padding-left: 30px;
+        }
+
+        .service-list-content .sub-heading {
+            color: #28a745;
+            /* Brand green */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: inline-block;
+            background-color: #d1f0d1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .service-list-content h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #333333;
+        }
+
+        .service-list-content p {
+            margin-bottom: 30px;
+            color: #666666;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Multi-column layout for the locations */
+        .multi-column-list {
+            column-count: 4;
+            column-gap: 25px;
             list-style: none;
             padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px 20px;
+            margin: 0 0 35px 0;
         }
 
-        .location-list li {
-            position: relative;
-            padding-left: 25px;
+        .multi-column-list li {
+            margin-bottom: 12px;
             font-size: 15px;
-            font-weight: 500;
             color: #444444;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            cursor: default;
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
 
-        .location-list li i {
-            position: absolute;
-            left: 0;
+        .multi-column-list li i {
             color: #2297DC;
-            /* Your brand blue */
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        /* Hover Effect: Text turns green and slides right slightly */
-        .location-list li:hover {
-            color: #9ca728;
-            /* Your brand green */
-            transform: translateX(5px);
-        }
-
-        .location-list li:hover i {
-            color: #9ca728;
+            margin-right: 8px;
+            font-size: 13px;
+            flex-shrink: 0;
         }
 
         /* Responsive adjustments */
+        @media (max-width: 1199px) {
+            .multi-column-list {
+                column-count: 3;
+            }
+        }
+
         @media (max-width: 991px) {
-            .location-list {
-                grid-template-columns: repeat(3, 1fr);
+            .service-list-content {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+
+            .map-wrapper {
+                min-height: 400px;
+            }
+
+            .map-wrapper iframe {
+                min-height: 400px;
+            }
+
+            .multi-column-list {
+                column-count: 2;
             }
         }
 
-        @media (max-width: 767px) {
-            .location-list {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 575px) {
+            .multi-column-list {
+                column-count: 2;
             }
 
-            .service-locations-wrapper {
-                padding: 30px 20px;
+            .service-list-content h2 {
+                font-size: 28px;
             }
         }
 
-        @media (max-width: 480px) {
-            .location-list {
-                grid-template-columns: 1fr;
+        /* --- FAQ Section Styles --- */
+        .faq-area {
+            background-color: #06278a;
+            /* Matches your footer's dark blue */
+            padding: 80px 0;
+            color: #ffffff;
+        }
+
+        .faq-badge {
+            background-color: #d1f0d1;
+            color: #28a745;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-left-content h2 {
+            font-weight: 700;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .faq-left-content p {
+            color: #d0d7ed;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* Accordion Styles */
+        .faq-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            transition: background 0.3s ease;
+        }
+
+        .faq-header h5 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 700;
+            color: #333333;
+            padding-right: 20px;
+        }
+
+        /* The circular Plus icon */
+        .faq-toggle-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background-color: #8ee4f0;
+            /* Soft blue from reference */
+            color: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+
+        /* Turns the + into an x and changes color when open */
+        .faq-header[aria-expanded="true"] .faq-toggle-icon {
+            transform: rotate(45deg);
+            background-color: #9ca728;
+            /* Brand green */
+            color: #ffffff;
+        }
+
+        .faq-body {
+            padding: 0 25px 25px 25px;
+            color: #555555;
+            font-size: 15px;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+
+        @media (max-width: 991px) {
+            .faq-left-content {
+                margin-bottom: 40px;
+                text-align: center;
             }
         }
     </style>
@@ -852,9 +1000,10 @@
                             Cleaning</span> Solutions</h2>
                 </div>
                 <div class="col-lg-4 text-right" style="text-align: right;">
-                    <a href="contact.html" class="btn btn-md"
-                        style="background-color: #8ee4f0; color: #333333; font-weight: 600; border-radius: 0;">Get a
-                        Free Quote Today <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></a>
+                    <a href="contact.html" class="btn btn-md quote-today-btn">
+                        Get a Free Quote Today
+                        <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                    </a>
                 </div>
             </div>
 
@@ -1159,32 +1308,35 @@
             </div>
         </div>
     </div>
-    <!-- Start Service Area
+    <!-- Start Modern Service Area & Map
     ============================================= -->
-    <div class="work-process-area text-center default-padding-bottom">
-        <!-- Shape -->
-        <div class="shape">
-            <img src="assets/img/shape/13.png" alt="Shape">
-        </div>
-        <!-- End Shape -->
-
+    <div class="modern-service-area">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="site-heading text-center">
-                        <h4 style="margin-top: 50px;">Service Area</h4>
-                        <h2>Serving Ottawa and Surrounding Areas with Excellence!</h2>
-                        <div class="devider"></div>
+            <div class="row align-items-center">
+
+                <!-- Left Side: Google Map -->
+                <div class="col-lg-6">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2802.5500019965307!2d-75.74538132420929!3d45.37807497107273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0697cb0fa4a5%3A0x9f7d9c7402035501!2s1505%20Laperriere%20Ave%20Suite%20349%2C%20Ottawa%2C%20ON%20K1Z%207T1%2C%20Canada!5e0!3m2!1sen!2sin!4v1741343336557!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="service-locations-wrapper">
-                        <ul class="location-list text-left">
+                <!-- Right Side: Locations Content -->
+                <div class="col-lg-6">
+                    <div class="service-list-content">
+                        <span class="sub-heading"><i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i>
+                            Service Area</span>
+                        <h2>Serving Ottawa and <span style="color: #2297DC;">Surrounding Areas</span></h2>
+                        <p>
+                            We proudly offer our premier exterior cleaning services across a wide range of locations.
+                            Whether you need residential soft washing or commercial fleet cleaning, check our service
+                            areas below to see if we operate in your neighborhood!
+                        </p>
+
+                        <ul class="multi-column-list text-left">
                             <li><i class="fas fa-map-marker-alt"></i> Arnprior</li>
                             <li><i class="fas fa-map-marker-alt"></i> Ashton</li>
                             <li><i class="fas fa-map-marker-alt"></i> Barrhaven</li>
@@ -1230,12 +1382,18 @@
                             <li><i class="fas fa-map-marker-alt"></i> Vanier</li>
                             <li><i class="fas fa-map-marker-alt"></i> Vars</li>
                         </ul>
+
+                        <a href="contact.html" class="btn btn-theme primary effect btn-md">
+                            Check Service Availability <i class="fas fa-arrow-right"
+                                style="margin-left: 8px; font-size: 0.9em;"></i>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-    <!-- End Service Area -->
+    <!-- End Modern Service Area & Map -->
     <!-- Start Services
     ============================================= -->
     <!--<div class="services-style-two-area default-padding">
@@ -1370,6 +1528,125 @@
         </div>
     </div>-->
     <!-- End Services-->
+
+    <!-- Start FAQ Area
+    ============================================= -->
+    <div class="faq-area">
+        <div class="container">
+            <div class="row">
+
+                <!-- Left Side: Title and Intro -->
+                <div class="col-lg-4 faq-left-content">
+                    <span class="faq-badge">
+                        <i class="fas fa-question-circle" style="margin-right: 6px;"></i> COMMON QUESTIONS
+                    </span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>
+                        Have questions about our exterior cleaning services? We have put together answers to the most
+                        common questions we receive from property owners across Ottawa.
+                    </p>
+                    <a href="contact.html" class="btn btn-md"
+                        style="background-color: #9ca728; color: #ffffff; font-weight: 600; border-radius: 4px;">
+                        Still Have Questions?
+                    </a>
+                </div>
+
+                <!-- Right Side: Accordion Questions -->
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-card">
+                            <div class="faq-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true">
+                                <h5>What areas in Ottawa do you serve?</h5>
+                                <div class="faq-toggle-icon">+</div>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#faqAccordion">
+                                <div class="faq-body">
+                                    We proudly serve the Greater Ottawa Area and surrounding communities, including
+                                    Kanata, Nepean, Orleans, Barrhaven, and more. If you are unsure if we cover your
+                                    area, just give us a quick call!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-card">
+                            <div class="faq-header collapsed" id="headingTwo" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false">
+                                <h5>Are your cleaning methods safe for my property?</h5>
+                                <div class="faq-toggle-icon">+</div>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#faqAccordion">
+                                <div class="faq-body">
+                                    Yes, absolutely. We use industry-standard equipment and adjust our water pressure
+                                    based on the surface we are cleaning. We also use eco-friendly cleaning solutions
+                                    that are tough on grime but completely safe for your siding, landscaping, and pets.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-card">
+                            <div class="faq-header collapsed" id="headingThree" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false">
+                                <h5>Do I need to be home while you clean?</h5>
+                                <div class="faq-toggle-icon">+</div>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#faqAccordion">
+                                <div class="faq-body">
+                                    Not at all! As long as we have clear access to the areas being washed and a working
+                                    outdoor water connection, we can complete the job while you are out. We will simply
+                                    notify you when the work is done.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-card">
+                            <div class="faq-header collapsed" id="headingFour" data-toggle="collapse"
+                                data-target="#collapseFour" aria-expanded="false">
+                                <h5>Do you handle both residential and commercial properties?</h5>
+                                <div class="faq-toggle-icon">+</div>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#faqAccordion">
+                                <div class="faq-body">
+                                    Yes, we specialize in both. From cozy residential driveways and roofs to large
+                                    commercial storefronts, dumpster pads, and fleet washing, our team has the equipment
+                                    and experience to handle jobs of any size.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-card">
+                            <div class="faq-header collapsed" id="headingFive" data-toggle="collapse"
+                                data-target="#collapseFive" aria-expanded="false">
+                                <h5>How do I get a quote for my project?</h5>
+                                <div class="faq-toggle-icon">+</div>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                data-parent="#faqAccordion">
+                                <div class="faq-body">
+                                    Getting a quote is fast and easy. You can skip the endless online forms and call us
+                                    directly at (613) 619-0916 for an immediate, over-the-phone estimate tailored to
+                                    your property's specific needs.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End FAQ Area -->
 
     <!-- Start Contact Area 
     ============================================= -->

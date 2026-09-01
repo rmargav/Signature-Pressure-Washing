@@ -9036,6 +9036,36 @@ a.btn-common:hover {
 
 .contact-quote-btn {
   background-color: #ff9800 !important; /* Orange */
-  border-color: #ff9800 !important;
+  /* border-color: #ff9800 !important; */
   color: #fff !important;
+}
+/* Quote buttons: GREEN by default, BLUE on hover */
+
+.btn.btn-theme.effect.contact-quote-btn::after {
+  background: #9ca728 !important;
+}
+
+.btn.btn-theme.effect.contact-quote-btn::before {
+  background: #06278a !important;
+}
+
+.btn.btn-theme.effect.contact-quote-btn:hover {
+  background-color: #06278a !important;
+  border-color: #06278a !important;
+  color: #ffffff !important;
+}
+/* Get a Free Quote Today */
+.quote-today-btn {
+  background-color: #9ca728 !important;
+  border-color: #9ca728 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.quote-today-btn:hover {
+  background-color: #06278a !important;
+  border-color: #06278a !important;
+  color: #ffffff !important;
 }
