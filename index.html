@@ -203,7 +203,8 @@
         .free-quote-btn i::after,
         .modern-service-area .btn i::after,
         .contact-quote-btn i::after,
-        .quote-today-btn i::after {
+        .quote-today-btn i::after,
+        #modalSubmit i::after {
             display: none !important;
             content: none !important;
             background: transparent !important;
@@ -217,7 +218,8 @@
         .free-quote-btn i,
         .modern-service-area .btn i,
         .contact-quote-btn i,
-        .quote-today-btn i {
+        .quote-today-btn i,
+        #modalSubmit i {
             border: none !important;
             text-decoration: none !important;
             box-shadow: none !important;
@@ -582,6 +584,12 @@
                 text-align: center;
             }
         }
+
+        /* Disable Submit button until form is valid */
+        #modalSubmit:disabled {
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+        }
     </style>
     <!-- ========== End Stylesheet ========== -->
 
@@ -692,7 +700,8 @@
                                         class="fa fa-comment" style="margin-right: 5px;"></i> Text</a>
                             </div>
                             <div class="action-quote" style="width: 100%;">
-                                <a href="contact.html" class="btn btn-theme effect btn-sm contact-quote-btn"
+                                <a href="#" data-toggle="modal" data-target="#quoteModal"
+                                    class="btn btn-theme effect btn-sm contact-quote-btn"
                                     style="width: 100%; padding: 10px 0; text-align: center; display: block;">Get
                                     Quote</a>
                             </div>
@@ -756,17 +765,22 @@
                                             </p>
 
                                             <div data-animation="animated zoomInUp" style="margin-top: 25px;">
+
                                                 <a href="tel:6136190916" class="btn btn-theme effect btn-md slider-btn">
-                                                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> (613)
-                                                    619-0916
+                                                    <i class="fas fa-phone-alt" style="margin-right: 5px;"></i>
+                                                    <span style="margin-right: 40px;">(613) 619-0916</span>
                                                 </a>
+
                                                 <a href="sms:6136190916" class="btn btn-theme effect btn-md slider-btn">
-                                                    <i class="fas fa-sms" style="margin-right: 5px;"></i> Text Us
+                                                    <i class="fas fa-sms" style="margin-right: 5px;"></i>
+                                                    <span style="margin-right: 40px;">Text Us</span>
                                                 </a>
-                                                <a href="contact.html"
+
+                                                <a href="#" data-toggle="modal" data-target="#quoteModal"
                                                     class="btn btn-theme primary effect btn-md contact-quote-btn slider-btn">
-                                                    Get a Free Quote
+                                                    <span style="margin-right: 0px;">Get a Free Quote</span>
                                                 </a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -806,7 +820,7 @@
                                                 <a href="sms:6136190916" class="btn btn-theme effect btn-md slider-btn">
                                                     <i class="fas fa-sms" style="margin-right: 5px;"></i> Text Us
                                                 </a>
-                                                <a href="contact.html"
+                                                <a href="#" data-toggle="modal" data-target="#quoteModal"
                                                     class="btn btn-theme primary effect btn-md contact-quote-btn slider-btn">
                                                     Get a Free Quote
                                                 </a>
@@ -1004,9 +1018,9 @@
                 </div>
 
                 <div class="col-lg-4 text-right" style="text-align: right;">
-                    <a href="contact.html" class="btn btn-md quote-today-btn">
-                        Get a Free Quote Today
-                        <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+                    <a href="#" data-toggle="modal" data-target="#quoteModal" class="btn btn-md quote-today-btn"
+                        style="background-color: #8ee4f0; color: #333333; font-weight: 600; border-radius: 0;">
+                        Get a Free Quote Today <i class="fas fa-arrow-right" stle="margin-left: 5px;"></i>
                     </a>
                 </div>
             </div>
@@ -1828,251 +1842,6 @@
     </div>
     <!-- End FAQ Area -->
 
-    <!-- Start Contact Area 
-    ============================================= -->
-    <div id="contact" class="contact-area default-padding" style="background-color:aliceblue">
-        <div class="container">
-            <div class="contact-content">
-                <div class="row">
-                    <div class="col-lg-12 contact-form-box">
-                        <div class="form-box">
-                            <h2>Book Our Cleaning Services</h2>
-                            <p>
-                                Ready to give your property a fresh, clean look? Tell us about your project, and our
-                                team will help you find the right exterior cleaning solution for your home or business.
-                            </p>
-                            <form action="#" method="POST" class="contact-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <lable>Service Type</lable>
-                                            <div class="form-group">
-                                                <select id="drpService">
-                                                    <option value="1">Residential</option>
-                                                    <option value="2">Commercial</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <lable>Cleaning Frequency</lable>
-                                            <div class="form-group">
-                                                <select>
-                                                    <option value="1">One-Time</option>
-                                                    <option value="2">Weekly</option>
-                                                    <option value="3">Bi-Weekly</option>
-                                                    <option value="4">Monthly</option>
-                                                    <option value="5">Quarterly</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" id="divResiSer">
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Pool Cleaning
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">House Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Skylight Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Roof & Gutter
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Driveway Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Post Construction Cleaning
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Deck Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Fence Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Solar Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" id="divCommSer">
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Fleet Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Graffiti Removal
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Building Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Store Front Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Walkway Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Parking Lot Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Drive Thru Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Dumpster Pad Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label class="container1">Solar Wash
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input class="form-control" id="name" name="name" placeholder="Name"
-                                                type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input class="form-control" id="email" name="email" placeholder="Email"
-                                                type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input class="form-control" id="phone" name="phone" placeholder="Phone"
-                                                type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <input class="form-control" id="code" name="code" placeholder="Postal Code"
-                                                type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group comments">
-                                            <textarea class="form-control" id="comments" name="comments"
-                                                placeholder="Any Details?"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <button type="submit" name="submit" id="submit">
-                                            Send Message <i class="fa fa-paper-plane"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- Alert Message -->
-                                <div class="col-lg-12 alert-notification">
-                                    <div id="message" class="alert-msg"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Contact Area -->
-
     <!-- Start Footer
     ============================================= -->
     <footer>
@@ -2220,6 +1989,126 @@
                 }
             });
         });
+
+        $(document).ready(function () {
+            // Existing on-page form logic
+            $("#divResiSer").show();
+            $("#divCommSer").hide();
+
+            $("#drpService").change(function () {
+                if ($('option:selected', this).text() == 'Commercial') {
+                    $("#divResiSer").hide();
+                    $("#divCommSer").show();
+                }
+                else {
+                    $("#divResiSer").show();
+                    $("#divCommSer").hide();
+                }
+            });
+
+            // NEW: Modal form logic
+            $("#modalDivResiSer").show();
+            $("#modalDivCommSer").hide();
+
+            $("#modalDrpService").change(function () {
+                if ($('option:selected', this).text() == 'Commercial') {
+                    $("#modalDivResiSer").hide();
+                    $("#modalDivCommSer").show();
+                }
+                else {
+                    $("#modalDivResiSer").show();
+                    $("#modalDivCommSer").hide();
+                }
+            });
+        });
+
+        $(document).ready(function () {
+
+            const form = $('#quoteModal .contact-form');
+            const submitBtn = $('#modalSubmit');
+
+            function validateQuoteForm() {
+
+                let isValid = true;
+
+                // Required text/select fields
+                $('#modalDrpService, #modalFrequency, #modalName, #modalEmail, #modalPhone, #modalCode')
+                    .each(function () {
+                        if ($.trim($(this).val()) === '') {
+                            isValid = false;
+                        }
+                    });
+
+                // Validate email
+                const email = $.trim($('#modalEmail').val());
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+                    isValid = false;
+                }
+
+                // At least one service checkbox must be selected
+                const serviceSelected =
+                    $('#modalDivResiSer input[type="checkbox"]:checked').length > 0 ||
+                    $('#modalDivCommSer input[type="checkbox"]:checked').length > 0;
+
+                if (!serviceSelected) {
+                    isValid = false;
+                }
+
+                // Enable / disable Submit button
+                submitBtn.prop('disabled', !isValid);
+            }
+
+
+            // Validate while user fills the form
+            form.on('input change', 'input, select, textarea', function () {
+                validateQuoteForm();
+            });
+
+
+            // Handle Service For change
+            $('#modalDrpService').on('change', function () {
+
+                if ($(this).val() == '1') {
+
+                    $('#modalDivResiSer').show();
+                    $('#modalDivCommSer').hide();
+
+                    // Clear commercial checkboxes
+                    $('#modalDivCommSer input[type="checkbox"]').prop('checked', false);
+
+                } else {
+
+                    $('#modalDivResiSer').hide();
+                    $('#modalDivCommSer').show();
+
+                    // Clear residential checkboxes
+                    $('#modalDivResiSer input[type="checkbox"]').prop('checked', false);
+                }
+
+                validateQuoteForm();
+            });
+
+
+            // Validate before submitting
+            form.on('submit', function (e) {
+
+                if (!validateQuoteForm()) {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Form is valid, allow normal submission
+                return true;
+            });
+
+
+            // Initial validation
+            validateQuoteForm();
+
+        });
+
     </script>
     <!-- Mobile Bottom Bar -->
     <div id="mobile-bottom-bar" class="d-lg-none"
@@ -2231,6 +2120,205 @@
             style="width: 50%; border-radius: 0; padding: 15px 0; font-size: 16px;"><i class="fa fa-comment"
                 style="margin-right: 5px;"></i> Text Us</a>
     </div>
+
+    <!-- Start Get Quote Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #06278a; color: #ffffff;">
+                    <h5 class="modal-title" id="quoteModalLabel" style="color: #ffffff; font-weight: 700;">Get a Free
+                        Quote</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        style="color: #ffffff; opacity: 1;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="padding: 30px;">
+                    <div class="contact-form-box">
+                        <form action="/assets/mail/contact.php" method="POST" class="contact-form">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: #333;">Service For</label>
+                                        <div class="form-group">
+                                            <div class="quote-select-wrapper">
+                                                <select id="modalDrpService" name="service_for" class="form-control"
+                                                    required>
+                                                    <option value="1">Residential</option>
+                                                    <option value="2">Commercial</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: #333;">Cleaning Frequency</label>
+                                        <div class="form-group">
+                                            <select id="modalFrequency" name="frequency" class="form-control" required>
+                                                <option value="">Select Frequency</option>
+                                                <option value="1">One-Time</option>
+                                                <option value="2">Weekly</option>
+                                                <option value="3">Bi-Weekly</option>
+                                                <option value="4">Monthly</option>
+                                                <option value="5">Quarterly</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Residential Services Checkboxes -->
+                            <div class="row" id="modalDivResiSer">
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Pool Cleaning<input
+                                                type="checkbox" name="services[]" value="Pool Cleaning"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">House Wash<input type="checkbox"
+                                                name="services[]" value="House Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Skylight Wash<input
+                                                type="checkbox" name="services[]" value="Skylight Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Roof & Gutter<input
+                                                type="checkbox" name="services[]" value="Roof & Gutter"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Driveway Wash<input
+                                                type="checkbox" name="services[]" value="Driveway Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Post Construction<input
+                                                type="checkbox" name="services[]" value="Post Construction"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Deck Wash<input type="checkbox"
+                                                name="services[]" value="Deck Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Fence Wash<input type="checkbox"
+                                                name="services[]" value="Fence Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Solar Wash<input type="checkbox"
+                                                name="services[]" value="Solar Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                            </div>
+
+                            <!-- Commercial Services Checkboxes -->
+                            <div class="row" id="modalDivCommSer" style="display: none;">
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Fleet Wash<input type="checkbox"
+                                                name="services[]" value="Fleet Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Graffiti Removal<input
+                                                type="checkbox" name="services[]" value="Graffiti Removal"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Building Wash<input
+                                                type="checkbox" name="services[]" value="Building Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Store Front Wash<input
+                                                type="checkbox" name="services[]" value="Store Front Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Walkway Wash<input type="checkbox"
+                                                name="services[]" value="Walkway Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Parking Lot Wash<input
+                                                type="checkbox" name="services[]" value="Parking Lot Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Drive Thru Wash<input
+                                                type="checkbox" name="services[]" value="Drive Thru Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Dumpster Pad Wash<input
+                                                type="checkbox" name="services[]" value="Dumpster Pad Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group"><label class="container1">Solar Wash<input type="checkbox"
+                                                name="services[]" value="Solar Wash"><span
+                                                class="checkmark"></span></label></div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="modalName" name="name" placeholder="Name"
+                                            type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="modalEmail" name="email" placeholder="Email"
+                                            type="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="modalPhone" name="phone" placeholder="Phone"
+                                            type="tel" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="modalCode" name="code" placeholder="Postal Code"
+                                            type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group comments">
+                                        <textarea class="form-control" id="modalComments" name="comments"
+                                            placeholder="Any Details?"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-lg-12 text-center">
+                                    <button type="submit" name="submit" id="modalSubmit"
+                                        class="btn btn-theme primary effect btn-md"
+                                        style="width: 100%; font-weight: bold;" disabled>
+                                        Submit Request <i class="fa fa-paper-plane" style="margin-left: 5px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Get Quote Modal -->
 
 </body>
 

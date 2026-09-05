@@ -9069,3 +9069,212 @@ a.btn-common:hover {
   border-color: #06278a !important;
   color: #ffffff !important;
 }
+/* =========================================
+   GET QUOTE MODAL - FORM STYLING
+   ========================================= */
+
+/* Service For & Cleaning Frequency Dropdowns */
+#quoteModal select.form-control {
+  width: 100%;
+  height: 48px !important;
+  padding: 8px 42px 8px 15px !important;
+  border: 2px solid #d1d7e0 !important;
+  border-radius: 6px !important;
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  cursor: pointer;
+
+  /* Remove Bootstrap/template appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Custom dropdown arrow */
+  background-image:
+    linear-gradient(45deg, transparent 50%, #06278a 50%),
+    linear-gradient(135deg, #06278a 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 20px,
+    calc(100% - 12px) 20px;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Dropdown hover */
+#quoteModal select.form-control:hover {
+  border-color: #06278a !important;
+}
+
+/* Dropdown focus */
+#quoteModal select.form-control:focus {
+  border-color: #06278a !important;
+  box-shadow: 0 0 0 3px rgba(6, 39, 138, 0.12) !important;
+  outline: none !important;
+}
+
+/* Dropdown labels */
+#quoteModal .form-group > label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600 !important;
+  color: #333333 !important;
+}
+
+/* =========================================
+   CUSTOM CHECKBOXES
+   ========================================= */
+
+/* Checkbox container */
+#quoteModal .container1 {
+  position: relative;
+  display: block;
+  min-height: 42px;
+  padding: 10px 10px 10px 42px;
+  margin-bottom: 8px;
+  border: 1px solid #d5dbe5;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hide default checkbox */
+#quoteModal .container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Visible checkbox */
+#quoteModal .container1 .checkmark {
+  position: absolute;
+  left: 13px;
+  top: 10px;
+  width: 21px;
+  height: 21px;
+  background-color: #ffffff;
+  border: 2px solid #06278a !important;
+  border-radius: 4px;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+#quoteModal .container1:hover {
+  border-color: #06278a !important;
+  background-color: #f7f9ff;
+}
+
+#quoteModal .container1:hover .checkmark {
+  border-color: #06278a !important;
+}
+
+/* Checked checkbox */
+#quoteModal .container1 input:checked ~ .checkmark {
+  background-color: #06278a !important;
+  border-color: #06278a !important;
+}
+
+/* Checkmark/tick */
+#quoteModal .container1 .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show tick when checked */
+#quoteModal .container1 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Tick design */
+#quoteModal .container1 .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* =========================================
+   CHECKBOX ROW SPACING
+   ========================================= */
+
+#quoteModal #modalDivResiSer,
+#quoteModal #modalDivCommSer {
+  margin-top: 10px;
+}
+
+#quoteModal #modalDivResiSer .form-group,
+#quoteModal #modalDivCommSer .form-group {
+  margin-bottom: 10px;
+}
+
+/* =========================================
+   MODAL TEXT INPUTS
+   ========================================= */
+
+#quoteModal input.form-control,
+#quoteModal textarea.form-control {
+  border: 1px solid #d1d7e0 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+#quoteModal input.form-control {
+  height: 46px !important;
+}
+
+#quoteModal textarea.form-control {
+  min-height: 110px;
+}
+
+#quoteModal input.form-control:focus,
+#quoteModal textarea.form-control:focus {
+  border-color: #06278a !important;
+  box-shadow: 0 0 0 3px rgba(6, 39, 138, 0.1) !important;
+}
+
+/* =========================================
+   SUBMIT BUTTON ICON - REMOVE DECORATIVE LINE
+   ========================================= */
+
+#modalSubmit i::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#modalSubmit i {
+  border: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================
+   RESPONSIVE CHECKBOXES
+   ========================================= */
+
+@media (max-width: 767px) {
+  #quoteModal .container1 {
+    min-height: 44px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+}
